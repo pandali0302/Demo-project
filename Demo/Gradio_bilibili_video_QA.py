@@ -4,7 +4,7 @@
 from langchain_community.document_loaders import BiliBiliLoader
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 from langchain_huggingface.embeddings import HuggingFaceEmbeddings
-from langchain_community.embeddings import ModelScopeEmbeddings
+from langchain_community.embeddings import OllamaEmbeddings
 from langchain_community.vectorstores import FAISS
 from langchain.chains import LLMChain
 from langchain_openai import ChatOpenAI
@@ -42,12 +42,10 @@ def create_db_from_Bilibili_video_url(video_url, query, k=4):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
     docs = text_splitter.split_documents(transcript)
 
-    # model_id = "damo/nlp_corom_sentence-embedding_english-base"
-    # embeddings = ModelScopeEmbeddings(model_id=model_id)
-
+    # embeddings = OllamaEmbeddings()
     embeddings = HuggingFaceEmbeddings()
     db = FAISS.from_documents(docs, embeddings)
-   
+
     docs = db.similarity_search(query, k=k)
     docs_page_content = " ".join([d.page_content for d in docs])
 
