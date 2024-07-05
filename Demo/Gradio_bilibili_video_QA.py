@@ -45,6 +45,7 @@ def create_db_from_Bilibili_video_url(video_url, query, k=4):
     # run locally using ollama
     # embeddings = OllamaEmbeddings(model="mxbai-embed-large")  # by default, uses llama2.
 
+    # run online embedding model using huggingface
     embeddings = HuggingFaceEmbeddings()
     db = FAISS.from_documents(docs, embeddings)
 
