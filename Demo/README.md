@@ -1,5 +1,8 @@
 This demo utilizes the BilibiliLoader from the LangChai framework to load the transcript of a Bilibili video. It then makes a call to the glm-4 model using ZhipuAI API and returns an answer based on your question about this video.
 
+demo see below:
+![Gradio demo](Gradio_demo1.jpg)
+
 # Creating a Python environment
 
 To create a Python environment, you can use either `venv` or `conda`. Here are the steps for each option:
