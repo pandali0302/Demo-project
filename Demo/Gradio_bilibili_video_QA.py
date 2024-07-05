@@ -42,7 +42,9 @@ def create_db_from_Bilibili_video_url(video_url, query, k=4):
     text_splitter = RecursiveCharacterTextSplitter(chunk_size=2000, chunk_overlap=100)
     docs = text_splitter.split_documents(transcript)
 
-    # embeddings = OllamaEmbeddings()
+    # run locally using ollama
+    # embeddings = OllamaEmbeddings(model="mxbai-embed-large")  # by default, uses llama2.
+
     embeddings = HuggingFaceEmbeddings()
     db = FAISS.from_documents(docs, embeddings)
 
