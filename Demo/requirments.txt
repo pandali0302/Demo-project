@@ -1,0 +1,11 @@
+zhipuai
+langchain
+sentence_transformers
+langchain_community
+bilibili-api-python
+langchainhub 
+httpx_sse 
+langchain_openai 
+langchain_huggingface
+faiss-cpu
+python-dotenv
