@@ -29,7 +29,7 @@ BUVID3 = os.getenv("BUVID3")
 os.environ["TOKENIZERS_PARALLELISM"] = "false"
 
 
-def create_db_from_Bilibili_video_url(video_url, query, k=4):
+def qa_from_Bilibili_video(video_url, query, k=4):
     loader = BiliBiliLoader(
         video_urls=[video_url],
         sessdata=SESSDATA,
@@ -91,7 +91,7 @@ def create_db_from_Bilibili_video_url(video_url, query, k=4):
 # Example usage:
 # video_url = "https://www.bilibili.com/video/BV14f421q7H9/?spm_id_from=333.788.playrecommendByOp.0&vd_source=f187bdb853f3690201169c42c99729e6"
 # query = "请用中文回答桃子变软的小技巧是什么？"
-# response, docs = create_db_from_Bilibili_video_url(video_url, query)
+# response, docs = qa_from_Bilibili_video(video_url, query)
 
 # print(textwrap.fill(response, width=50))
 
@@ -102,7 +102,7 @@ import gradio as gr
 
 
 def get_response(video_url, query):
-    response, _ = create_db_from_Bilibili_video_url(video_url, query)
+    response, _ = qa_from_Bilibili_video(video_url, query)
     return response
 
 
