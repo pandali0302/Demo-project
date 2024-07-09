@@ -1,4 +1,5 @@
-This demo utilizes the BilibiliLoader from the LangChai framework to load the transcript of a Bilibili video. It then makes a call to the glm-4 model using ZhipuAI API and returns an answer based on your question about this video.
+This project showcases how to create a searchable database from a Bilibili video transcript, perform similarity search queries using the FAISS library, and respond to user questions with relevant and precise information. 
+It makes a call to the glm-4 model using ZhipuAI API, so you will need a zhupuai api key.
 
 demo see below:
 ![Gradio demo](Gradio_demo1.jpg)
